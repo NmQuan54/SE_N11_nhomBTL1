@@ -25,11 +25,7 @@ public class LoginApp extends Application {
     public static void main(String[] args) {
         
     	try {
-<<<<<<< HEAD
-           
-=======
-          
->>>>>>> e633f90d40aaede9e15bbdc8508e137c5ca52971
+
             // Chạy ứng dụng
             launch(args);
 
@@ -153,10 +149,7 @@ public class LoginApp extends Application {
             registerStage.show();
         });
 
-<<<<<<< HEAD
-    
-=======
->>>>>>> e633f90d40aaede9e15bbdc8508e137c5ca52971
+
         // Tạo giao diện
         VBox root = new VBox();
         root.setSpacing(10);
@@ -170,8 +163,6 @@ public class LoginApp extends Application {
         primaryStage.show();
 
     }
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> e633f90d40aaede9e15bbdc8508e137c5ca52971
+
