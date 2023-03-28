@@ -8,8 +8,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import Connection_to_SQL.JDBCconnection; 
+import Connection_to_SQL.JDBCconnection;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -50,7 +51,8 @@ public class LoginApp extends Application {
         Button loginButton = new Button("Đăng nhập");
         Button registerButton = new Button("Đăng ký");
         Label registerLabel = new Label("Bạn chưa có tài khoản?");
-
+        Stage mainStage = new Stage();
+        Stage loginStage = new Stage();
         // Sự kiện khi nhấn nút đăng nhập
         loginButton.setOnAction(event -> {
             String username = usernameField.getText();
@@ -65,6 +67,16 @@ public class LoginApp extends Application {
                     alert.setHeaderText(null);
                     alert.setContentText("Xin chào " + resultSet.getString("username"));
                     alert.showAndWait();
+                 // Tạo một giao diện mới sau khi đăng nhập thành công
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/application/sample.fxml"));
+                    Parent root1 = fxmlLoader.load();
+                    
+                    Scene scene = new Scene(root1);
+                    Stage stage = new Stage();
+                    stage.setScene(scene);
+                    stage.show();
+                
+                    
                 } else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Đăng nhập thất bại");
@@ -74,7 +86,12 @@ public class LoginApp extends Application {
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
-            }
+            } catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+            
+            
         });
         	
         registerButton.setOnAction(event -> {
@@ -134,25 +151,8 @@ public class LoginApp extends Application {
         });
 
      // Tạo một giao diện mới sau khi đăng nhập thành công
-        Stage mainStage = new Stage();
-        Stage loginStage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/application/sample.fxml"));
-        Parent root1 = fxmlLoader.load();
         
-        Scene scene = new Scene(root1);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-
-
-
-        Button logoutButton = new Button("Đăng xuất");
-        logoutButton.setOnAction(event -> {
-            // Phương thức xử lý đăng xuất
-            // Đóng cửa sổ và trở về cửa sổ đăng nhập
-            mainStage.close();
-            loginStage.show();
-        });
+        
 
         
 
