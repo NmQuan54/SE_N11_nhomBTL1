@@ -25,8 +25,7 @@ public class LoginApp extends Application {
     public static void main(String[] args) {
         
     	try {
-            
-
+          
             // Chạy ứng dụng
             launch(args);
 
@@ -149,13 +148,6 @@ public class LoginApp extends Application {
             registerStage.setScene(registerScene);
             registerStage.show();
         });
-
-     // Tạo một giao diện mới sau khi đăng nhập thành công
-        
-        
-
-        
-
 
         // Tạo giao diện
         VBox root = new VBox();
