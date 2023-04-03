@@ -12,6 +12,7 @@
 - việc hoàn thành : tạo database và chỉnh sửa login screen
 - Mô tả tiến trình : thực hành lại cách tạo database trên mySQL , học cách kết nối database , sử dụng cơ bản về javafx 
 - Mục tiêu: tiếp tục tạo thêm các chức năng khác
+
 Nguyễn Minh Quân:
 - công việc hoàn thành : thiết kế giao diện login, connect to database
 - Mô tả tiến trình : sử dụng java và javafx tạo giao diện login
