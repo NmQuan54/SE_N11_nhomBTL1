@@ -1,6 +1,6 @@
 package com.Models;
 
-public class Account {
+public class AccountBenhnhan {
     private String username;
     private String password;
 
@@ -16,7 +16,7 @@ public class Account {
         return password;
     }
 
-    public Account(String username, String password) {
+    public AccountBenhnhan(String username, String password) {
         this.username = username;
         this.password = password;
     }

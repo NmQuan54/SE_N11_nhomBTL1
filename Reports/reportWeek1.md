@@ -1,4 +1,4 @@
-# Báo cáo nhóm :
+**# Báo cáo nhóm :
 # Công việc đã hoàn thành:
 - họp nhóm tạo database và giao diện login 
 # Mô tả tiến trình:
@@ -16,4 +16,4 @@
 Nguyễn Minh Quân:
 - công việc hoàn thành : thiết kế giao diện login, connect to database
 - Mô tả tiến trình : sử dụng java và javafx tạo giao diện login
-- Mục tiêu tuần tới : thiết kế giao diện cho bệnh nhân
+- Mục tiêu tuần tới : thiết kế giao diện cho bệnh nhân**

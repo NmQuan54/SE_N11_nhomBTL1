@@ -5,12 +5,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import com.App;
-import com.Models.Account;
+import com.Helper.AlertHelper;
+import com.Models.AccountBacsi;
+import com.Models.AccountBenhnhan;
 import com.Models.ExecuteQuery;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.control.Alert.AlertType;
+// import javafx.scene.control.Alert.AlertType;
 
 public class LoginController {
 
@@ -22,11 +24,13 @@ public class LoginController {
     private ComboBox<String> cbRole;
 
     @FXML
-    Button btnSubmit;
-
+    Button btnLogin;
+    @FXML
+    Button btnSignup;
+    
     private String selectedRole = "User";
-    private ArrayList<Account> userAccounts = new ArrayList<>();
-    private ArrayList<Account> pyschologistsAccounts = new ArrayList<>();
+    private ArrayList<AccountBenhnhan> userAccounts = new ArrayList<>();
+    private ArrayList<AccountBacsi> pyschologistsAccounts = new ArrayList<>();
 
     @FXML
     public void initialize() { // xu ly combobox
@@ -43,13 +47,7 @@ public class LoginController {
         });
     }
 
-    private void showLoginError(String message) {
-        Alert alert = new Alert(AlertType.ERROR);
-        alert.setTitle("Lỗi đăng nhập");
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
+    
 
     private void initAccount() {
         ExecuteQuery queryPyschologists = new ExecuteQuery("SELECT * FROM account_bacsi"); // lay du lieu account admin tu
@@ -58,7 +56,7 @@ public class LoginController {
         ResultSet resultSet = queryPyschologists.executeQuery();
         try {
             while (resultSet.next()) {
-                pyschologistsAccounts.add(new Account(resultSet.getString("username"),
+                pyschologistsAccounts.add(new AccountBacsi(resultSet.getString("username"),
                         resultSet.getString("password")));
             }
         } catch (SQLException e) {
@@ -70,7 +68,7 @@ public class LoginController {
         resultSet = queryUser.executeQuery();
         try {
             while (resultSet.next()) {
-                userAccounts.add(new Account(resultSet.getString("username"),
+                userAccounts.add(new AccountBenhnhan(resultSet.getString("username"),
                         resultSet.getString("password")));
             }
         } catch (SQLException e) {
@@ -82,36 +80,40 @@ public class LoginController {
         String inputUsername = txtUsername.getText();
         String inputPassword = txtPassword.getText();
         
-        for (Account account : pyschologistsAccounts) {
+        for (AccountBacsi account : pyschologistsAccounts) {
             if (account.getUsername().equals(inputUsername) && account.getPassword().equals(inputPassword)) {
                 return 1;
             }
         }
     
-        for (Account account : userAccounts) {
+        for (AccountBenhnhan account : userAccounts) {
             if (account.getUsername().equals(inputUsername) && account.getPassword().equals(inputPassword)) {
-                return 1;
+                return 2;
             }
         }
     
         return 0;
     }
 
-    public void btnSubmit(ActionEvent actionEvent) throws IOException {
+    public void onClickLogin(ActionEvent actionEvent) throws IOException {
         if (txtUsername.getText().equals("") || txtPassword.getText().equals("")) {
-            showLoginError("Vui lòng nhập đầy đủ thông tin");
+            AlertHelper.showLoginError("Vui lòng nhập đầy đủ thông tin");
             return;
         }
 
         if (checkAccount() == 1 && selectedRole.equals("Psychologists")) {
             App.setRoot("PsychologistsFrm");
-        } else if (checkAccount() == 1 && selectedRole.equals("User")) {
+        } else if (checkAccount() == 2 && selectedRole.equals("User")) {
             App.setRoot("userFrm");
         } else {
-            showLoginError("Sai tên đăng nhập hoặc mật khẩu");
+            AlertHelper.showLoginError("Sai tên đăng nhập hoặc mật khẩu");
         }
 
         // System.out.println("Pass: " + getPassword());
+    }
+
+    public void onClickSignup(ActionEvent actionEvent) throws IOException {
+        App.setRoot("registerFrm");
     }
 
 }

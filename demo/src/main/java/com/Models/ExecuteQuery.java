@@ -34,4 +34,14 @@ public class ExecuteQuery {
         }
         return null;
     }
+
+    public void executeUpdate(){
+        try {
+            Connection connection = getConnection();
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
