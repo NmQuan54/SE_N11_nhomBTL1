@@ -14,6 +14,18 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 public class PsyHomeController {
- 
+    @FXML
+    Button btThongTin;
+    @FXML
+    Button btPhongKham;
+    @FXML
+    Button btLichKham;
+    @FXML
+    Button btYeuCau;
+    @FXML
+    Button btLogout;
     
+    public void onClickLogout(ActionEvent actionEvent) throws SQLException, IOException  {
+        App.setRoot("loginFrm");
+    }
 }
