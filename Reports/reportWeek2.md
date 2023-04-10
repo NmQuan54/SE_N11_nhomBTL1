@@ -11,3 +11,7 @@
 - việc hoàn thành : hoàn thiện chức năng đăng kí , đăng nhập ,tạo giao diện cơ bản cho bệnh nhân và bác sĩ
 - Mô tả tiến trình : học cách thao tác với mySQL để đăng kí và thiết kế giao diện theo chức năng
 - Mục tiêu: tiếp tục tạo thêm các chức năng cơ bản khác
+Nguyễn Minh Quân:
+- việc hoàn thành : chỉnh sửa giao diện đăng nhập, đăng ký
+- Mô tả tiến trình : vận dụng các kiến thức đã học được để thực hiện thiết kế các chức năng.
+- Mục tiêu: tiếp tục tạo thêm các chức năng cơ bản khác
