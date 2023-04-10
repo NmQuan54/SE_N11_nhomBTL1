@@ -47,7 +47,7 @@ public class SignupController {
         String rePassword = txtRePassword.getText();
         String role = selectedRole;
         if(!rePassword.equals(password)) {
-            System.out.println("ngu");
+        	AlertHelper.showAlert(AlertType.INFORMATION, "Warning", null, "Mật khẩu xác nhận không giống nhau");
             return ;
         }
         if(role.equals("User")){
