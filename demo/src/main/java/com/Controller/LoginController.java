@@ -8,7 +8,8 @@ import com.App;
 import com.Helper.AlertHelper;
 import com.Models.AccountBacsi;
 import com.Models.AccountBenhnhan;
-import com.Models.ExecuteQuery;
+import com.utils.ExecuteQuery;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

@@ -5,7 +5,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import com.App;
 import com.Models.AccountBenhnhan;
-import com.Models.ExecuteQuery;
+import com.utils.ExecuteQuery;
+
 import javafx.event.ActionEvent;
 import com.Helper.AlertHelper;
 import javafx.fxml.FXML;
@@ -44,7 +45,7 @@ public class SignupController {
     public void onPressSignup(ActionEvent actionEventction) throws SQLException, IOException {
         String username = txtUsername.getText();
         String password = txtPassword.getText();
-        String rePassword = txtRePassword.getText();
+        String rePassword = txtRePassword.getText();    
         String role = selectedRole;
         if(!rePassword.equals(password)) {
         	AlertHelper.showAlert(AlertType.INFORMATION, "Warning", null, "Mật khẩu xác nhận không giống nhau");

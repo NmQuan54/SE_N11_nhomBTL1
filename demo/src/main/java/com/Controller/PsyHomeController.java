@@ -6,8 +6,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import com.App;
 import com.Helper.AlertHelper;
+import com.utils.ExecuteQuery;
 
-import com.Models.ExecuteQuery;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
