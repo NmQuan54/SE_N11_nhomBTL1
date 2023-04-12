@@ -17,3 +17,8 @@ Nguyễn Minh Quân:
 - công việc hoàn thành : thiết kế giao diện login, connect to database
 - Mô tả tiến trình : sử dụng java và javafx tạo giao diện login
 - Mục tiêu tuần tới : thiết kế giao diện cho bệnh nhân**
+
+Nguyễn Việt Hưng:
+- công việc hoàn thành: tạo database, kết nối database
+- mô tả tiến trình : kết nối qua my SQL, học javafx
+- mục tiêu : tạo thêm chức năng khác 
